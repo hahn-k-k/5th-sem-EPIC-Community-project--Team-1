@@ -1,0 +1,159 @@
+/*
+	usage:
+
+	Logger({
+		group: String, // idb, init, misc, if not specified 'misc' is chosen
+		key: String, // additional identifier
+		message: String, // specific message, required
+		error: Boolean // true/false value indicating if this should happen or not, if not specified set to false
+	});
+
+
+	examples:
+
+	Logger({
+		group: String, // 'idb'
+		key: String, // 'class-storage init'
+		message: String, // 'idb initialization start'
+	});
+
+	Logger({
+		group: 'idb',
+		key: 'class-storage init',
+		message: 'idb read failed',
+		error: true
+	});
+*/
+
+(function(global) {
+	"use strict";
+
+	var debug = false;
+
+	var logs = [];
+	var config = {
+		lastDebounce: null,
+		debounceTime: 1000,
+		url: 'index.php',
+		type: 'POST',
+		guid: (function guid() {
+			function s4() {
+				return Math.floor((1 + Math.random()) * 0x10000)
+					.toString(16)
+					.substring(1);
+			}
+			return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
+				s4() + '-' + s4() + s4() + s4();
+		})()
+	};
+
+	var Logger = function(opts) {
+		if (debug) console.log(opts.message);
+		if (location.origin === 'file://' || location.origin === 'null' || location.protocol !== 'https:') {
+            return;
+        }
+		if (config.lastDebounce) {
+			clearTimeout(config.lastDebounce);
+		}
+
+		config.lastDebounce = setTimeout(emptyQueue, config.debounceTime);
+
+		if (!(opts instanceof Object)) return;
+		opts = prepareOpts(opts);
+
+		if (opts) {
+			logs.push(opts);
+		} else {
+			console.error('log opts invalid');
+		}
+	};
+
+	Logger.groups = {
+		reload: 0,
+		pageLoad: 1,
+		storageInit: 2,
+		IDBInit: 3,
+		IDBTransactions: 4
+	};
+
+	Logger.emptyQueue = emptyQueue;
+
+	// init Logger with first log
+	Logger({
+		key: 'loggerInit',
+		group: 'pageLoad',
+		message: 'Logger initialized'
+	});
+
+	function emptyQueue(callback) {
+		var logsCopy = JSON.parse(JSON.stringify(logs));
+		logs = [];
+		config.lastDebounce = null;
+		callback = callback || function() {};
+
+		if (logsCopy.length) {
+			/*
+			$.ajax({
+				url: config.url,
+				data: {
+					t: 'log',
+					logs: JSON.stringify(logsCopy),
+					guid: config.guid
+				},
+				type: config.type,
+				timeout: config.timeout
+			}).complete(callback);
+			*/
+
+			var xhr = new XMLHttpRequest();
+			xhr.open(config.type, config.url);
+			xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+			xhr.onload = function() {
+				callback();
+			};
+			var params = {
+				t: 'log',
+				logs: JSON.stringify(logsCopy),
+				guid: config.guid
+			};
+			var queryString = Object.keys(params).map(function (key) {
+   			 	return encodeURIComponent(key) + '=' + encodeURIComponent(params[key])
+				}).join('&');
+			
+			xhr.send(queryString);
+
+		} else {
+			callback();
+		}
+
+	}
+
+
+	function prepareOpts(opts) {
+		var newOpts = {};
+
+		// invalidate when unknown group or no message is used
+		if (!(opts.group in Logger.groups || opts.message)) {
+			newOpts = false;
+		} else {
+			newOpts.data = {
+				g: opts.group,
+				k: opts.key || '',
+				m: opts.message,
+				e: !!opts.error,
+				d: new Date().getTime(),
+				s: !!opts.processEnded
+			};
+		}
+
+		return newOpts;
+	}
+
+	if (typeof define === 'function' && define.amd) {
+		define(Logger);
+	} else if (typeof module !== 'undefined' && module.exports) {
+		module.exports = Logger;
+	} else {
+		global.Logger = Logger;
+	}
+}(this));
