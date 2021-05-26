@@ -7,23 +7,35 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-
 public class MainActivity extends AppCompatActivity {
+    
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.language_selection_page);
+        setContentView(R.layout.activity_job_role_selection);
 
-        configureEnglishButton();
+        configurebutton5();
+        configurebutton6();
+
     }
-    private void configureEnglishButton(){
-        Button englishButton = (Button) findViewById(R.id.english_button);
-        englishButton.setOnClickListener(new View.OnClickListener(){
+
+    private void configurebutton5() {
+        Button button5 = findViewById(R.id.button5);
+        button5.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view){
-                startActivity(new Intent(MainActivity.this, job_role_selection.class));
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this,hiree_login_page.class));
             }
         });
+    }
+    private void configurebutton6() {
+        Button button6 = findViewById(R.id.button6);
+        button6.setOnClickListener((new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this,hirer_login_page.class));
+            }
+        }));
     }
 }

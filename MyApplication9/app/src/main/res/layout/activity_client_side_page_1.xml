@@ -4,153 +4,122 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#BBEAFC">
+    android:background="@color/background">
     <include
         android:id="@+id/include"
         layout="@layout/toolbar" />
-    <TextView
-        android:id="@+id/textView11"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/nunito_semibold"
-        android:text="YOUR NAME: "
+    <View
+        android:id="@+id/wave2"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
         android:layout_below="@+id/include"
-        android:layout_margin="30dp"
-        android:layout_alignParentStart="true"
-        android:textColor="#000000"/>
-    <TextView
-        android:id="@+id/textView12"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/nunito_semibold"
-        android:text="CONTACT NO: "
-        android:layout_below="@+id/textView11"
-        android:layout_margin="30dp"
-        android:layout_alignParentStart="true"
-        android:textColor="#000000"/>
-    <TextView
-        android:id="@+id/textView13"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="CITY NAME: "
-        android:layout_below="@+id/textView12"
-        android:layout_margin="30dp"
-        android:layout_alignParentStart="true"
-        android:textColor="#000000"/>
-    <TextView
-        android:id="@+id/textView14"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/nunito_semibold"
-        android:text="ADDRESS: "
-        android:layout_below="@+id/textView13"
-        android:layout_margin="30dp"
-        android:layout_alignParentStart="true"
-        android:textColor="#000000"/>
-    <TextView
-        android:id="@+id/textView15"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/nunito_semibold"
-        android:text="PIN CODE: "
-        android:layout_below="@+id/textView14"
-        android:layout_margin="30dp"
-        android:layout_alignParentStart="true"
-        android:textColor="#000000"/>
-    <TextView
-        android:id="@+id/textView16"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/nunito_semibold"
-        android:text="STATE: "
-        android:layout_below="@+id/textView15"
-        android:layout_margin="30dp"
-        android:layout_alignParentStart="true"
-        android:textColor="#000000"/>
+        android:background="@drawable/wave"/>
+
     <EditText
-        android:id="@+id/editTextPersonName"
-        android:layout_width="wrap_content"
+        android:id="@+id/hirerName"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:fontFamily="@font/nunito_semibold"
-        android:inputType="textPersonName"
-        android:layout_below="@+id/include"
-        android:layout_alignParentEnd="true"
-        android:layout_margin="15dp"
-        />
+        android:layout_below="@+id/wave2"
+        android:layout_marginLeft="35dp"
+        android:layout_marginRight="35dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/round_border"
+        android:hint="Your Full Name"
+        android:drawableStart="@drawable/ic_person_24"
+        android:drawablePadding="20dp"
+        android:padding="14dp"/>
     <EditText
-        android:id="@+id/editTextPhone"
-        android:layout_width="wrap_content"
+        android:id="@+id/hirerPhoneNo"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/hirerName"
+        android:layout_marginStart="35dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/round_border"
+        android:drawableStart="@drawable/ic_baseline_phone"
+        android:drawablePadding="20dp"
         android:ems="10"
-        android:fontFamily="@font/nunito_semibold"
-        android:hint="##########"
+        android:hint="Contact number"
         android:inputType="phone"
-        android:text="+91"
-        android:textColorHint="#000000"
-        android:layout_below="@+id/editTextPersonName"
-        android:layout_alignParentEnd="true"
-        android:layout_margin="15dp" />
+        android:padding="14dp" />
     <EditText
-        android:id="@+id/editTextPersonName3"
-        android:layout_width="wrap_content"
+        android:id="@+id/hirerAddress"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="20dp"
-        android:ems="10"
-        android:fontFamily="@font/nunito_semibold"
-        android:inputType="textPersonName"
-        android:layout_below="@+id/editTextPhone"
-        android:layout_alignParentEnd="true"
-        android:layout_margin="15dp" />
+        android:layout_below="@+id/hirerPhoneNo"
+        android:layout_marginLeft="35dp"
+        android:layout_marginRight="35dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/round_border"
+        android:hint="Your Full Address"
+        android:drawableStart="@drawable/ic_location_searching"
+        android:drawablePadding="20dp"
+        android:padding="14dp"/>
+
+    <Spinner
+        android:id="@+id/state1"
+        android:background="@drawable/style_spinner_state"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/hirerAddress"
+        android:layout_marginLeft="35dp"
+        android:layout_marginRight="35dp"
+        android:layout_marginBottom="16dp"
+        android:padding="25dp"/>
+
+    <Spinner
+        android:id="@+id/city1"
+        android:background="@drawable/style_spinner_state"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/state1"
+        android:layout_marginLeft="35dp"
+        android:layout_marginRight="35dp"
+        android:layout_marginBottom="16dp"
+        android:padding="25dp"/>
+
     <EditText
-        android:id="@+id/editTextPostalAddress2"
-        android:layout_width="wrap_content"
+        android:id="@+id/hirerPinCode"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:fontFamily="@font/nunito_semibold"
-        android:inputType="textPostalAddress"
-        android:layout_below="@+id/editTextPersonName3"
-        android:layout_alignParentEnd="true"
-        android:layout_margin="15dp" />
-    <EditText
-        android:id="@+id/editTextPostalAddress3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:fontFamily="@font/nunito_semibold"
-        android:hint="######"
-        android:inputType="textPostalAddress"
-        android:layout_below="@+id/editTextPostalAddress2"
-        android:layout_alignParentEnd="true"
-        android:layout_margin="15dp" />
-    <EditText
-        android:id="@+id/editTextPersonName7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/editTextPostalAddress3"
-        android:layout_alignParentEnd="true"
-        android:ems="10"
-        android:fontFamily="@font/nunito_semibold"
-        android:inputType="textPersonName"
-        android:layout_margin="30dp"/>
+        android:layout_below="@+id/city1"
+        android:layout_marginLeft="35dp"
+        android:layout_marginRight="35dp"
+        android:layout_marginBottom="16dp"
+        android:ems="6"
+        android:background="@drawable/round_border"
+        android:hint="Your Pin Code"
+        android:drawableStart="@drawable/ic_location"
+        android:drawablePadding="20dp"
+        android:padding="14dp"/>
+
     <Button
         android:id="@+id/button3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#2d7c8c"
-        android:text="CANCEL"
-        android:layout_below="@id/textView16"
-        android:layout_margin="45dp"
-        android:layout_alignParentStart="true"
-        android:textColor="#FFFFFF"/>
+        android:layout_below="@id/hirerPinCode"
+        android:text="Cancel"
+        android:background="@drawable/round_bg"
+        android:textStyle="bold"
+        android:textColor="@color/background"
+        android:textSize="18sp"
+        android:padding="25dp"
+        android:layout_alignParentLeft="true"
+        android:layout_margin="25dp"/>
     <Button
         android:id="@+id/button4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#2d7c8c"
-        android:text="NEXT"
-        android:layout_below="@id/editTextPersonName7"
-        android:layout_margin="45dp"
-        android:layout_alignParentEnd="true"
-        android:textColor="#FFFFFF"/>
+        android:layout_below="@id/hirerPinCode"
+        android:text="Next"
+        android:background="@drawable/round_bg"
+        android:textStyle="bold"
+        android:textColor="@color/background"
+        android:textSize="18sp"
+        android:padding="25dp"
+        android:layout_alignParentRight="true"
+        android:layout_margin="25dp"/>
+
 </RelativeLayout>

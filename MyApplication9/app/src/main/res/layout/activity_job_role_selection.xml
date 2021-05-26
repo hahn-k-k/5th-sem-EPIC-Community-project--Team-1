@@ -4,49 +4,55 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#BBEAFC">
+    android:background="@color/background">
     <include
         android:id="@+id/include2"
         layout="@layout/toolbar" />
+    <View
+        android:layout_below="@+id/include2"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@drawable/wave"/>
     <Button
         android:id="@+id/button5"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#2d7c8c"
-        android:fontFamily="@font/indie_flower"
-        android:text="  WANT TO DO JOB ?  "
-        android:textColor="#FFFFFF"
-        android:textSize="40px"
+        android:background="@drawable/round_bg"
+        android:text="WANT TO DO JOB ?"
+        android:textColor="@color/background"
+        android:textSize="20sp"
+        android:textStyle="bold"
         android:layout_below="@+id/include2"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
         android:layout_marginTop="150dp"
-        />
+        android:layout_marginLeft="35dp"
+        android:layout_marginRight="35dp"
+        android:padding="20dp"/>
     <TextView
         android:id="@+id/textView18"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="OR"
-        android:textSize="24sp"
+        android:text="or"
+        android:textSize="20sp"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold"
         android:layout_below="@+id/button5"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
         android:layout_marginTop="20dp"
-        />
+        android:layout_marginLeft="35dp"
+        android:layout_marginRight="35dp"
+        android:padding="20dp"
+        android:textAlignment="center"/>
     <Button
         android:id="@+id/button6"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#2d7c8c"
-        android:fontFamily="@font/indie_flower"
-        android:text="  WANT JOB TO BE DONE ?  "
-        android:textColor="#FFFFFF"
-        android:textSize="40px"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="108dp"
-        tools:layout_editor_absoluteY="425dp"
+        android:background="@drawable/round_bg"
+        android:text="WANT JOB TO BE DONE ?"
+        android:textColor="@color/background"
+        android:textSize="20sp"
+        android:textStyle="bold"
         android:layout_below="@+id/textView18"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"/>
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="35dp"
+        android:layout_marginRight="35dp"
+        android:padding="20dp"/>
 </RelativeLayout>

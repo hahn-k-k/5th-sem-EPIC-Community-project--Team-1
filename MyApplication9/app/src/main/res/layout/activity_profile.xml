@@ -7,146 +7,175 @@
     <include
         android:id="@+id/include5"
         layout="@layout/toolbar"/>
+    <View
+        android:id="@+id/wave3"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_below="@+id/include5"
+        android:background="@drawable/wave"/>
     <TextView
         android:id="@+id/profile_text"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/include5"
-        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/wave3"
         android:text="YOUR PROFILE"
-        android:fontFamily="@font/indie_flower"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textSize="30dp"
-        android:layout_margin="20dp"/>
+        android:layout_marginLeft="35dp"
+        android:layout_marginRight="35dp"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/colorPrimary"
+        android:textAlignment="center"
+        />
     <RelativeLayout
         android:id="@+id/profile_rl_2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/profile_text"
         android:layout_centerHorizontal="true"
-        android:background="#ffffff"
-        android:layout_margin="20dp">
+        android:background="@color/colorPrimary"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        >
 
         <ImageView
             android:id="@+id/profile_pic"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_centerHorizontal="true"
-            android:src="@drawable/ic_baseline_person_outline_24" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/profile_pic"
+            android:layout_marginTop="16dp"
+            android:layout_centerHorizontal="true"/>
         <TextView
             android:id="@+id/textview19"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/profile_pic"
             android:text="Name : "
-            android:layout_margin="20dp"
-            android:layout_alignParentStart="true"
-            android:fontFamily="@font/nunito_semibold"/>
+            android:layout_marginVertical="16dp"
+            android:layout_marginHorizontal="30dp"
+            android:textColor="@color/background"
+            android:textStyle="bold"/>
         <TextView
             android:id="@+id/textview20"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/textview19"
             android:text="Contact No : "
-            android:layout_margin="20dp"
-            android:layout_alignParentStart="true"
-            android:fontFamily="@font/nunito_semibold"/>
+            android:layout_marginVertical="16dp"
+            android:layout_marginHorizontal="30dp"
+            android:textColor="@color/background"
+            android:textStyle="bold"/>
         <TextView
             android:id="@+id/textview21"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/textview20"
             android:text="City : "
-            android:layout_margin="20dp"
-            android:layout_alignParentStart="true"
-            android:fontFamily="@font/nunito_semibold"/>
+            android:layout_marginVertical="16dp"
+            android:layout_marginHorizontal="30dp"
+            android:textColor="@color/background"
+            android:textStyle="bold"/>
         <TextView
             android:id="@+id/textview22"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/textview21"
             android:text="PIN Code : "
-            android:layout_margin="20dp"
-            android:layout_alignParentStart="true"
-            android:fontFamily="@font/nunito_semibold"/>
-        <TextView
-            android:id="@+id/textview23"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/textview22"
-            android:text="Address : "
-            android:layout_margin="20dp"
-            android:layout_alignParentStart="true"
-            android:fontFamily="@font/nunito_semibold"/>
+            android:layout_marginVertical="16dp"
+            android:layout_marginHorizontal="30dp"
+            android:textColor="@color/background"
+            android:textStyle="bold"/>
         <TextView
             android:id="@+id/textview24"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/textview23"
-            android:text="Skills : "
-            android:layout_margin="20dp"
-            android:layout_alignParentStart="true"
-            android:fontFamily="@font/nunito_semibold"/>
+            android:layout_below="@id/textview22"
+            android:text="Profession : "
+            android:layout_marginVertical="16dp"
+            android:layout_marginHorizontal="30dp"
+            android:textColor="@color/background"
+            android:textStyle="bold"/>
         <TextView
             android:id="@+id/textview25"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/profile_pic"
             android:text="Mr.X"
-            android:layout_margin="20dp"
+            android:layout_margin="16dp"
             android:layout_alignParentEnd="true"
             android:layout_toEndOf="@id/textview19"
-            android:fontFamily="@font/nunito_semibold"/>
+            android:textColor="@color/background"
+            android:textAlignment="center"/>
         <TextView
             android:id="@+id/textview26"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/textview25"
             android:text="+91 - ##########"
-            android:layout_margin="20dp"
+            android:layout_margin="16dp"
             android:layout_alignParentEnd="true"
             android:layout_toEndOf="@id/textview20"
-            android:fontFamily="@font/nunito_semibold"/>
+            android:textColor="@color/background"
+            android:textAlignment="center"/>
         <TextView
             android:id="@+id/textview27"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/textview26"
             android:text="BHOPAL"
-            android:layout_margin="20dp"
+            android:layout_margin="16dp"
             android:layout_alignParentEnd="true"
             android:layout_toEndOf="@id/textview21"
-            android:fontFamily="@font/nunito_semibold"/>
+            android:textColor="@color/background"
+            android:textAlignment="center"/>
         <TextView
             android:id="@+id/textview28"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/textview27"
             android:text=" # # # # # #"
-            android:layout_margin="20dp"
+            android:layout_margin="16dp"
             android:layout_alignParentEnd="true"
             android:layout_toEndOf="@id/textview22"
-            android:fontFamily="@font/nunito_semibold"/>
-        <TextView
-            android:id="@+id/textview29"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/textview28"
-            android:text="32,Eco Green Park, Ayodhya Bypass Road"
-            android:layout_margin="20dp"
-            android:layout_alignParentEnd="true"
-            android:layout_toEndOf="@id/textview23"
-            android:fontFamily="@font/nunito_semibold"/>
+            android:textColor="@color/background"
+            android:textAlignment="center"/>
+
         <TextView
             android:id="@+id/textview30"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/textview29"
+            android:layout_below="@id/textview28"
             android:text="PAINTER"
-            android:layout_margin="10dp"
+            android:layout_margin="16dp"
             android:layout_toEndOf="@id/textview24"
-            android:fontFamily="@font/indie_flower"
-            android:background="#686969"
-            android:textColor="#ffffff"/>
+            android:textColor="@color/background"
+            android:textAlignment="center"/>
     </RelativeLayout>
+
+    <Button
+        android:id="@+id/button7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/profile_rl_2"
+        android:text="home"
+        android:background="@drawable/round_bg"
+        android:textStyle="bold"
+        android:textColor="@color/background"
+        android:textSize="18sp"
+        android:padding="25dp"
+        android:layout_alignParentLeft="true"
+        android:layout_margin="25dp"/>
+    <Button
+        android:id="@+id/button8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/profile_rl_2"
+        android:text="Edit Profile"
+        android:background="@drawable/round_bg"
+        android:textStyle="normal"
+        android:textColor="@color/background"
+        android:textSize="18sp"
+        android:padding="25dp"
+        android:layout_alignParentRight="true"
+        android:layout_margin="25dp"/>
 </RelativeLayout>

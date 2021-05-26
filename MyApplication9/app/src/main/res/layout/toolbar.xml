@@ -4,6 +4,7 @@
     android:layout_height="wrap_content"
     android:background="#04C2EA">
     <RelativeLayout
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="16dp">
