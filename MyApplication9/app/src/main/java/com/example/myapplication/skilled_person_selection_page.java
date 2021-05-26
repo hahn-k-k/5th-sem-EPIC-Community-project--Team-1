@@ -10,6 +10,8 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Spinner;
 
 import java.util.ArrayList;
@@ -20,7 +22,10 @@ public class skilled_person_selection_page extends AppCompatActivity {
 
     Spinner jobrole1;
 
-    AppCompatRadioButton rbPin,rbState,rbCity;
+    Button searchButton;
+
+    AppCompatRadioButton rbPin,rbState;
+    EditText searchBar,searchBarState,searchBarCity;
 
     RecyclerView recyclerView;
     LinearLayoutManager layoutManager;
@@ -34,15 +39,29 @@ public class skilled_person_selection_page extends AppCompatActivity {
         jobrole1 = findViewById(R.id.jobroles1);
         rbPin = findViewById(R.id.rbPin);
         rbState = findViewById(R.id.rbState);
-        rbCity = findViewById(R.id.rbCity);
+        searchBar = findViewById(R.id.searchBar);
+        searchBarState = findViewById(R.id.searchBarState);
+        searchBarCity = findViewById(R.id.searchBarCity);
+        searchButton =  findViewById(R.id.searchButton);
 
+
+        configuresearchButton();
         initData();
         initRecyclerView();
 
-        String[] jobroles1 = {"Select Your Profession","Painter","Car Driver","Mechanic","Others"};
+        String[] jobroles1 = {"*Select The Job You Want To Be Done*","Painter","Car Driver","Mechanic","Others"};
         ArrayList<String> arrayListJobroles1 = new ArrayList<>(Arrays.asList(jobroles1));
         ArrayAdapter<String> arrayAdapterJobroles1 = new ArrayAdapter<>(this,R.layout.style_spinner,arrayListJobroles1);
         jobrole1.setAdapter(arrayAdapterJobroles1);
+    }
+
+    private void configuresearchButton() {
+        searchButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                recyclerView.setVisibility(View.VISIBLE);
+            }
+        });
     }
 
     private void initData() {
@@ -80,23 +99,22 @@ public class skilled_person_selection_page extends AppCompatActivity {
                 if (isSelected){
                     rbPin.setTextColor(Color.WHITE);
                     rbState.setTextColor(Color.parseColor("#04C2EA"));
-                    rbCity.setTextColor(Color.parseColor("#04C2EA"));
+                    searchBar.setVisibility(View.VISIBLE);
+                    searchBarState.setVisibility(View.GONE);
+                    searchBarCity.setVisibility(View.GONE);
                 }
                 break;
             case R.id.rbState:
                 if (isSelected){
                     rbState.setTextColor(Color.WHITE);
                     rbPin.setTextColor(Color.parseColor("#04C2EA"));
-                    rbCity.setTextColor(Color.parseColor("#04C2EA"));
-                }
-                break;
-            case R.id.rbCity:
-                if (isSelected){
-                    rbCity.setTextColor(Color.WHITE);
-                    rbPin.setTextColor(Color.parseColor("#04C2EA"));
-                    rbState.setTextColor(Color.parseColor("#04C2EA"));
+                    searchBar.setVisibility(View.GONE);
+                    searchBarState.setVisibility(View.VISIBLE);
+                    searchBarCity.setVisibility(View.VISIBLE);
                 }
                 break;
         }
     }
+
+
 }

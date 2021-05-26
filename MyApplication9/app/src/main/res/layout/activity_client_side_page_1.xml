@@ -67,7 +67,7 @@
         android:layout_marginLeft="35dp"
         android:layout_marginRight="35dp"
         android:layout_marginBottom="16dp"
-        android:padding="25dp"/>
+        android:padding="18dp"/>
 
     <Spinner
         android:id="@+id/city1"
@@ -78,7 +78,7 @@
         android:layout_marginLeft="35dp"
         android:layout_marginRight="35dp"
         android:layout_marginBottom="16dp"
-        android:padding="25dp"/>
+        android:padding="18dp"/>
 
     <EditText
         android:id="@+id/hirerPinCode"

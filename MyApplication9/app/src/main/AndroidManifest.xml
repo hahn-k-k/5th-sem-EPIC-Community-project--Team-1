@@ -21,7 +21,24 @@
         <activity
             android:name=".MainActivity"
             android:theme="@style/AppTheme" />
-
+        <activity
+            android:name=".hirer_login_page"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".hiree_login_page"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".client_side_page_1"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".client_side_page_2"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".profile"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".skilled_person_selection_page"
+            android:theme="@style/AppTheme" />
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
